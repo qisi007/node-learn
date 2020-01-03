@@ -1,0 +1,26 @@
+{
+  "name": "node-learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qisi007/node-learn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qisi007/node-learn/issues"
+  },
+  "homepage": "https://github.com/qisi007/node-learn#readme",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-router": "^7.4.0",
+    "sequelize": "^5.21.3"
+  }
+}
