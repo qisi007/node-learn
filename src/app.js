@@ -1,9 +1,11 @@
-const Koa = require('koa');
+// const Koa = require('koa');
+import Koa from 'koa';
 const app = new Koa();
 const linkMongo = require('./config/mongo');
 const bodyparser = require('koa-bodyparser');
 const cors = require('koa2-cors');
-const router = require('./router/index.js');
+// const router = require('./router/index.js');
+import router from './router/index.js'
 
 const start = async () => {
     // 连接mongodb
