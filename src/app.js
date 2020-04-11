@@ -1,19 +1,21 @@
-// const Koa = require('koa');
 import Koa from 'koa';
+import linkMongo from'./config/mongo';
+import bodyparser from'koa-bodyparser';
+import cors from'koa2-cors';
+import router from './router/swagger.js'
+
+
+
 const app = new Koa();
-const linkMongo = require('./config/mongo');
-const bodyparser = require('koa-bodyparser');
-const cors = require('koa2-cors');
-// const router = require('./router/index.js');
-import router from './router/index.js'
 
 const start = async () => {
     // 连接mongodb
     await linkMongo()
     // 路由
     app.use(router.routes());
+    app.use(router.allowedMethods());
     // post请求参数处理
-    app.use(bodyparser())
+    app.use(bodyparser());
     // 跨域
     app.use(cors({
         origin: '*',

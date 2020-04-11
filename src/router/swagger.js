@@ -1,10 +1,12 @@
-const { SwaggerRouter } = require('koa-swagger-decorator');
-const path = require('path');
-const router = new SwaggerRouter();
+import { SwaggerRouter } from "koa-swagger-decorator";
+import path from 'path';
 
-router.swagger({
-    title:'千家严选公众号后台服务',
-    description: 'selected',
+
+const swaggerRouter = new SwaggerRouter();
+
+swaggerRouter.swagger({
+    title:'日志',
+    description: '日志后台接口',
     varsion: 'v1.0.0',
     swaggerHtmlEndpoint: '/index.html',
     swaggerJsonEndpoint: '/swagger-json',
@@ -26,5 +28,8 @@ router.swagger({
         }
     }
 });
-router.mapDir(path.resolve(__dirname, '../controllers'));
-module.default = router;
+
+swaggerRouter.mapDir(path.resolve(__dirname, '../controller'));
+
+export default swaggerRouter;
+

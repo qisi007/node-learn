@@ -1,5 +1,4 @@
-const mongoose = require('mongoose')
-
+import mongoose from 'mongoose'
 
 
 /**
@@ -29,11 +28,7 @@ const TableSchema = new mongoose.Schema({
 const TableModel = mongoose.model('table', TableSchema);
 
 
-
-
-
-
-module.exports = {
+export {
     HeaderModel,
     TableModel
 }

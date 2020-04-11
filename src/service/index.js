@@ -1,4 +1,4 @@
-const { HeaderModel,TableModel } = require('../models/index');
+import { HeaderModel,TableModel } from '../models/index';
 
 
 const status = {
