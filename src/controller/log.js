@@ -4,15 +4,13 @@ import { request, summary, query, path, body, tags, params } from 'koa-swagger-d
 
 const logTag = tags(['log']);
 
-const table = {
+let table = {
     name: {type: 'string'},
     content: {type: 'string'},
     date: {type: 'string'}
 }
 
 const idQuery = {id: {type: "string"}}
-
-
 
 export default class Log {
     @request('get', '/getHeader')

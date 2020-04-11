@@ -11,11 +11,11 @@ const app = new Koa();
 const start = async () => {
     // 连接mongodb
     await linkMongo()
+    // post请求参数处理
+    app.use(bodyparser());
     // 路由
     app.use(router.routes());
     app.use(router.allowedMethods());
-    // post请求参数处理
-    app.use(bodyparser());
     // 跨域
     app.use(cors({
         origin: '*',
