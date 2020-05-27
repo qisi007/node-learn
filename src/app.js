@@ -4,11 +4,10 @@ import bodyparser from'koa-bodyparser';
 import cors from'koa2-cors';
 import router from './router/swagger.js'
 
-
-
 const app = new Koa();
 
 const start = async () => {
+    
     // 连接mongodb
     await linkMongo()
     // post请求参数处理
@@ -25,8 +24,11 @@ const start = async () => {
         allowMethods: ['GET', 'POST', 'DELETE'],
         allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
     }))
+    
     // 端口号 
     app.listen(3000);
+
+    
 }
 
 start()

@@ -1,10 +1,10 @@
 const demo = require('../service/index');
 
-import { request, summary, query, path, body, tags, params } from 'koa-swagger-decorator';
+import { request, summary, query, path, body, tags, params, description } from 'koa-swagger-decorator';
 
 const logTag = tags(['log']);
 
-let table = {
+const table = {
     name: {type: 'string'},
     content: {type: 'string'},
     date: {type: 'string'}
@@ -12,9 +12,17 @@ let table = {
 
 const idQuery = {id: {type: "string"}}
 
+const updateBody = {
+    name: {type: 'string'},
+    content: {type: 'string'},
+    date: {type: 'string'},
+    id: {type: "string"}
+}
+
 export default class Log {
     @request('get', '/getHeader')
     @summary('获取表头')
+    @description('表格中的表头列表')
     @logTag
     static async getHeader ( ctx ) {
         let result = await demo.findHeader();
@@ -44,7 +52,7 @@ export default class Log {
 
     @request('post', '/updataData')
     @summary('更新数据')
-    @body(table)
+    @body(updateBody)
     @logTag
     static async updataData ( ctx ) {
         let { id, name, content, date } = ctx.request.body;
