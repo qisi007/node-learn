@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "ts": "tsc src/index.ts --watch --outDir ./dist",
-    "start": "nodemon dist/index.js",
+    "ts": "tsc --watch",
+    "start": "nodemon build/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,9 +19,18 @@
   },
   "homepage": "https://github.com/qisi007/node-learn#readme",
   "dependencies": {
-    "@types/koa": "^2.11.3",
-    "@types/nodemon": "^1.19.0",
+    "eureka-js-client": "4.4.2",
     "koa": "^2.11.0",
-    "nodemon": "^2.0.4"
+    "koa-body": "^4.1.3",
+    "koa-swagger-decorator": "^1.6.4",
+    "mongoose": "^5.9.16",
+    "nodemon": "^2.0.4",
+    "os": "^0.1.1"
+  },
+  "devDependencies": {
+    "@types/eureka-js-client": "^4.5.2",
+    "@types/koa": "^2.11.3",
+    "@types/mongoose": "^5.7.21",
+    "@types/nodemon": "^1.19.0"
   }
 }
