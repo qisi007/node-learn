@@ -25,7 +25,9 @@
     "koa-swagger-decorator": "^1.6.4",
     "mongoose": "^5.9.16",
     "nodemon": "^2.0.4",
-    "os": "^0.1.1"
+    "os": "^0.1.1",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
   },
   "devDependencies": {
     "@types/eureka-js-client": "^4.5.2",

@@ -6,7 +6,7 @@
 
 
 class ProjectConfig  {
-    public readonly  port: string = "3001"
+    public readonly  port: string = "3000"
     public readonly db = {
         database: "test",
         username: "",

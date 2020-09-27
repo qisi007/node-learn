@@ -19,44 +19,31 @@ const koa_swagger_decorator_1 = require("koa-swagger-decorator");
 const index_1 = require("../service/index");
 let test = new index_1.Test();
 const tag = koa_swagger_decorator_1.tags(['测试']);
-let Text = /** @class */ (() => {
-    class Text {
-        static getData(ctx) {
-            return __awaiter(this, void 0, void 0, function* () {
-                ctx.body = yield test.getList();
-            });
-        }
-        static postData(ctx) {
-            return __awaiter(this, void 0, void 0, function* () {
-                console.log(ctx.request.body);
-                ctx.body = { aaa: 111, bbb: 222 };
-            });
-        }
-        static insertData() {
-            return __awaiter(this, void 0, void 0, function* () {
-                ctx.body = yield test.insertData();
-            });
-        }
+class Text {
+    static getData(ctx) {
+        return __awaiter(this, void 0, void 0, function* () {
+            ctx.body = yield test.getList();
+        });
     }
-    __decorate([
-        koa_swagger_decorator_1.request('get', '/getData'),
-        koa_swagger_decorator_1.summary('测试'),
-        tag
-    ], Text, "getData", null);
-    __decorate([
-        koa_swagger_decorator_1.request('post', '/postData'),
-        koa_swagger_decorator_1.summary('测试'),
-        koa_swagger_decorator_1.body({
-            aaa: { type: "string" },
-            bbb: { type: "string" }
-        }),
-        tag
-    ], Text, "postData", null);
-    __decorate([
-        koa_swagger_decorator_1.request('get', '/insertData'),
-        koa_swagger_decorator_1.summary('添加数据'),
-        tag
-    ], Text, "insertData", null);
-    return Text;
-})();
+    static postData(ctx) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log(ctx.request.body);
+            ctx.body = { aaa: 111, bbb: 222 };
+        });
+    }
+}
+__decorate([
+    koa_swagger_decorator_1.request('get', '/getData'),
+    koa_swagger_decorator_1.summary('测试'),
+    tag
+], Text, "getData", null);
+__decorate([
+    koa_swagger_decorator_1.request('post', '/postData'),
+    koa_swagger_decorator_1.summary('测试'),
+    koa_swagger_decorator_1.body({
+        aaa: { type: "string" },
+        bbb: { type: "string" }
+    }),
+    tag
+], Text, "postData", null);
 exports.default = Text;

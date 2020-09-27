@@ -8,7 +8,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.projectConfig = void 0;
 class ProjectConfig {
     constructor() {
-        this.port = "3001";
+        this.port = "3000";
         this.db = {
             database: "test",
             username: "",

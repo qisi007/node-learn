@@ -1,5 +1,9 @@
-import mongoose from "mongoose";
+import mongoose, { Document } from "mongoose";
 
+export interface TEST_DOC extends Document {
+    name: string,
+    age: number
+}
 const TEST_SCHEMA = new mongoose.Schema({
     name: { type: String },
     age: { type: Number },

@@ -27,11 +27,4 @@ export default class Text {
         console.log(ctx.request.body)
         ctx.body = {aaa: 111, bbb: 222}
     }
-
-    @request('get', '/insertData')
-    @summary('添加数据')
-    @tag
-    static async insertData () {
-        ctx.body = await test.insertData()
-    }
 }
